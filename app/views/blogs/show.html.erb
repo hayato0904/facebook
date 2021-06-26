@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Author:</strong>
+  <%= @blog.user.name %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @blog.title %>
 </p>
@@ -8,6 +13,11 @@
 <p>
   <strong>Content:</strong>
   <%= @blog.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @blog.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
