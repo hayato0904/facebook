@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :feeds do
+    collection do
+      post :confirm
+    end
+  end
+
   root  'blogs#index' 
   resources :blogs
   resources :contacts

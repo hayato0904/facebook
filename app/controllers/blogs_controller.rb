@@ -12,7 +12,11 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-    @blog = Blog.new
+    if params[:back]
+      @blog = Blog.new(feed_params)
+    else
+      @blog = Blog.new
+    end
   end
 
   # GET /blogs/1/edit
@@ -30,8 +34,7 @@ class BlogsController < ApplicationController
   end
 
   def confirm
-    @blog = current_user.blogs.build(blog_params)
-    render :new if @blog.invalid?
+    @blog= Blog.new(feed_params)
   end
 
   # PATCH/PUT /blogs/1 or /blogs/1.json
