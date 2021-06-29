@@ -12,10 +12,6 @@
    <body>
   
     <header>
-      <ul>
-        <li><a href="#">Bootstrapテキストページ</a></li>
-        <li><a href="#">トップページ</a></li>
-      </ul>
       <% if logged_in? %>
       <%= link_to "Profile", user_path(current_user.id) %>
       <%= link_to "Logout", session_path(current_user.id), method: :delete %>
@@ -26,9 +22,10 @@
     </header>
     
     <%= yield %>
-    <footer>
+    <%# 下記一行のfooterはとりあえずコメントアウトします。 %>
+    <%# <footer>
       <p>運営会社DIVE INTO CODE株式会社</p>
       <p>© 2015-2016 DIVE INTO CODE Corp.</p>
-    </footer>
+    </footer> %>
   </body>
 </html>

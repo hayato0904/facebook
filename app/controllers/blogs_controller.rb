@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     if params[:back]
-      @blog = Blog.new(feed_params)
+      @blog = Blog.new(blog_params)
     else
       @blog = Blog.new
     end
